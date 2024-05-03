@@ -1,9 +1,15 @@
+# Build and run
+```bash
+npm install
+npm run build
+npm run serve
+```
+
 # Open questions
 - Can we reduce the bundle size?
 - How to handle logout?
 
 # Samples
-
 passportInstance.loginCallback();
 window.addEventListener('load', function() {
   passportInstance.loginCallback();
