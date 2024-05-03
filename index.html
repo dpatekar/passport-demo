@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PASSPORT AUTH</title>
+</head>
+
+<body>
+  <button id="btnLogin">Login</button>
+  <button id="btnLogout">Logout</button>
+
+  <p id="lblAccount"></p>
+  <p id="lblEmail"></p>
+  <script type="module">
+    import {
+      login, logout, userInfo
+    } from './dist/passport.js';
+    const btnLogin = document.getElementById('btnLogin');
+    const btnLogout = document.getElementById('btnLogout');
+    const lblAccount = document.getElementById('lblAccount');
+    const lblEmail = document.getElementById('lblEmail');
+
+    btnLogin.addEventListener('click', async () => {
+      const accounts = await login();
+      const info = await userInfo();
+
+      if (accounts.length > 0) {
+        lblAccount.innerText = accounts[0];
+        if (info) {
+          lblEmail.innerText = info.email;
+        }
+      }
+    });
+
+    btnLogout.addEventListener('click', async () => {
+      await logout();
+    });
+  </script>
+</body>
+
+</html>
