@@ -1,3 +1,9 @@
+# Open questions
+- Can we reduce the bundle size?
+- How to handle logout?
+
+# Samples
+
 passportInstance.loginCallback();
 window.addEventListener('load', function() {
   passportInstance.loginCallback();
