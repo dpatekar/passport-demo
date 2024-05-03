@@ -8,6 +8,8 @@ npm run serve
 # Open questions
 - Can we reduce the bundle size?
 - How to handle logout?
+  - Full logout isn't working
+- Cookies console warnings?
 
 # Samples
 passportInstance.loginCallback();
