@@ -17,8 +17,7 @@ const passportInstance = new passport.Passport({
 
 export async function login() {
   const passportProvider = passportInstance.connectEvm();
-  const accounts = await passportProvider.request({ method: "eth_requestAccounts" });
-  return accounts;
+  return await passportProvider.request({ method: "eth_requestAccounts" });
 }
 
 export async function logout() {
@@ -30,6 +29,5 @@ export async function loginCallback() {
 }
 
 export async function userInfo() {
-  const userProfile = await passportInstance.getUserInfo();
-  return userProfile;
+  return await passportInstance.getUserInfo();
 }
