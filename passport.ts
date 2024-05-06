@@ -35,3 +35,10 @@ export async function userInfo() {
 export async function getToken() {
   return await passportInstance.getAccessToken();
 }
+
+export async function isLoggedIn() {
+  if (await passportInstance.getAccessToken())
+    return true;
+  else
+    return false;
+}

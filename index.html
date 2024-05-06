@@ -15,7 +15,7 @@
   <p id="lblEmail"></p>
   <script type="module">
     import {
-      login, logout, userInfo, getToken
+      login, logout, userInfo, isLoggedIn
     } from './dist/passport.js';
     const btnLogin = document.getElementById('btnLogin');
     const btnLogout = document.getElementById('btnLogout');
@@ -31,7 +31,7 @@
       await logout();
     });
 
-    if (await getToken()) {
+    if (await isLoggedIn()) {
       await loadInfo();
     }
     
