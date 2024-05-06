@@ -1,4 +1,3 @@
-const webpack = require('webpack'); // Ensure webpack is required at the top
 const path = require('path');
 const override = require('./config-overrides');
 
@@ -25,7 +24,7 @@ const baseConfig = {
   },
   optimization: {
     minimize: true,
-    usedExports: false
+    usedExports: true
   },
   experiments: {
     outputModule: true,
