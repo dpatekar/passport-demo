@@ -7,3 +7,4 @@ export declare function userInfo(): Promise<{
     sub: string;
 } | undefined>;
 export declare function getToken(): Promise<string | undefined>;
+export declare function isLoggedIn(): Promise<boolean>;

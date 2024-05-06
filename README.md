@@ -9,6 +9,7 @@ npm run serve
 - Can we reduce the bundle size?
 - Cookies console warnings?
 - How to check if a user is already logged in without calling 'eth_requestAccounts'?
+- Can we avoid login redirects?
 - How to handle logout?
 
 # Samples
