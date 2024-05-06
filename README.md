@@ -7,8 +7,9 @@ npm run serve
 
 # Open questions
 - Can we reduce the bundle size?
-- How to handle logout?
 - Cookies console warnings?
+- How to check if a user is already logged in without calling 'eth_requestAccounts'?
+- How to handle logout?
 
 # Samples
 passportInstance.loginCallback();

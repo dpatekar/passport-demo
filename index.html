@@ -15,14 +15,27 @@
   <p id="lblEmail"></p>
   <script type="module">
     import {
-      login, logout, userInfo
+      login, logout, userInfo, getToken
     } from './dist/passport.js';
     const btnLogin = document.getElementById('btnLogin');
     const btnLogout = document.getElementById('btnLogout');
+    const btnToken = document.getElementById('btnToken');
     const lblAccount = document.getElementById('lblAccount');
     const lblEmail = document.getElementById('lblEmail');
 
     btnLogin.addEventListener('click', async () => {
+      await loadInfo();
+    });
+
+    btnLogout.addEventListener('click', async () => {
+      await logout();
+    });
+
+    if (await getToken()) {
+      await loadInfo();
+    }
+    
+    async function loadInfo() {
       const accounts = await login();
       const info = await userInfo();
 
@@ -32,11 +45,8 @@
           lblEmail.innerText = info.email;
         }
       }
-    });
+    }
 
-    btnLogout.addEventListener('click', async () => {
-      await logout();
-    });
   </script>
 </body>
 

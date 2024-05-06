@@ -6,3 +6,4 @@ export declare function userInfo(): Promise<{
     nickname?: string | undefined;
     sub: string;
 } | undefined>;
+export declare function getToken(): Promise<string | undefined>;

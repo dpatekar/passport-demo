@@ -20,7 +20,7 @@ export async function login() {
   return await passportProvider.request({ method: "eth_requestAccounts" });
 }
 
-export async function logout() {
+export async function logout() {  
   await passportInstance.logout();
 }
 
@@ -30,4 +30,8 @@ export async function loginCallback() {
 
 export async function userInfo() {
   return await passportInstance.getUserInfo();
+}
+
+export async function getToken() {
+  return await passportInstance.getAccessToken();
 }
