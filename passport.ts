@@ -37,8 +37,5 @@ export async function getToken() {
 }
 
 export async function isLoggedIn() {
-  if (await passportInstance.getAccessToken())
-    return true;
-  else
-    return false;
+  return !!(await passportInstance.getAccessToken());
 }
