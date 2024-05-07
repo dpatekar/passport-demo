@@ -10,10 +10,11 @@
 <body>
   <script type="module">
     import {
-      loginCallback, userInfo
+      init, loginCallback
     } from './dist/passport.js';
-    loginCallback();
-    window.location = "/";
+    init(false, "7ApcuoSAIKF0zA0I7OAm5rDov7HiIstr", "pk_imapik-test-Kb2kJHJ4f$1xQElBPrek", "http://localhost:3000/redirect.html", "http://localhost:3000");
+
+    await loginCallback();
   </script>
 </body>
 

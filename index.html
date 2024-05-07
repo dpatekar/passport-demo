@@ -15,8 +15,11 @@
   <p id="lblEmail"></p>
   <script type="module">
     import {
-      login, logout, userInfo, isLoggedIn
+      init, login, logout, getUserInfo, isLoggedIn
     } from './dist/passport.js';
+
+    init(false, "7ApcuoSAIKF0zA0I7OAm5rDov7HiIstr", "pk_imapik-test-Kb2kJHJ4f$1xQElBPrek", "http://localhost:3000/redirect.html", "http://localhost:3000");
+
     const btnLogin = document.getElementById('btnLogin');
     const btnLogout = document.getElementById('btnLogout');
     const btnToken = document.getElementById('btnToken');
@@ -37,7 +40,7 @@
     
     async function loadInfo() {
       const accounts = await login();
-      const info = await userInfo();
+      const info = await getUserInfo();
 
       if (accounts.length > 0) {
         lblAccount.innerText = accounts[0];
