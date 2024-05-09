@@ -9,4 +9,5 @@ export declare function getUserInfo(): Promise<{
 } | undefined>;
 export declare function getEmail(): Promise<string | undefined>;
 export declare function getAccessToken(): Promise<string | undefined>;
+export declare function getIdToken(): Promise<string | undefined>;
 export declare function isLoggedIn(): Promise<boolean | undefined>;

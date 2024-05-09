@@ -53,6 +53,12 @@ export async function getAccessToken() {
   }
 }
 
+export async function getIdToken() {
+  if (passportInstance) {
+    return await passportInstance.getIdToken();
+  }
+}
+
 export async function isLoggedIn() {
   if (passportInstance) {
     return !!(await passportInstance.getAccessToken());

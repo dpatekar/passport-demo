@@ -15,16 +15,19 @@
   <p id="lblEmail"></p>
   <script type="module">
     import {
-      init, login, logout, getUserInfo, isLoggedIn
+      init, login, logout, getUserInfo, isLoggedIn, getAccessToken, getIdToken
     } from './dist/passport.js';
 
-    init(false, "7ApcuoSAIKF0zA0I7OAm5rDov7HiIstr", "pk_imapik-test-Kb2kJHJ4f$1xQElBPrek", "http://localhost:3000/redirect.html", "http://localhost:3000");
+    init(false, "y8q1VJFy9qhLwCNzrQp8RnblYmMECVAG", "pk_imapik-test-lrlVZul0L3KFs0AI$XNP", "http://localhost:3000/redirect.html", "http://localhost:3000");
 
     const btnLogin = document.getElementById('btnLogin');
     const btnLogout = document.getElementById('btnLogout');
     const btnToken = document.getElementById('btnToken');
     const lblAccount = document.getElementById('lblAccount');
     const lblEmail = document.getElementById('lblEmail');
+
+    console.log(`Access token: ${await getAccessToken()}`);
+    console.log(`ID token: ${await getIdToken()}`);
 
     btnLogin.addEventListener('click', async () => {
       await loadInfo();
