@@ -1,11 +1,12 @@
-import { config, passport } from '@imtbl/sdk';
+import { Passport } from '@imtbl/sdk/passport';
+import { Environment } from '@imtbl/sdk/config';
 
-let passportInstance: passport.Passport | undefined;
+let passportInstance: Passport | undefined;
 
 export function init(isProd: boolean, clientId: string, publishableKey: string, redirectUri: string, logoutRedirectUri: string) {
-  passportInstance = new passport.Passport({
+  passportInstance = new Passport({
     baseConfig: {
-      environment: isProd ? config.Environment.PRODUCTION : config.Environment.SANDBOX,
+      environment: isProd ? Environment.PRODUCTION : Environment.SANDBOX,
       publishableKey: publishableKey,
     },
     clientId: clientId,
